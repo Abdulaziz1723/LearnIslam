@@ -1,0 +1,278 @@
+*
+{
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    margin: 0;
+}
+/* header part starts here*/
+header
+{
+    width: 100%;
+    height: 65px;
+    background-color: hsla(0, 0%, 0%, 0.800);
+    border: 1px solid white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(5px);
+    transition: top 1.2s ease;
+}
+.logoPart
+{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+#logo
+{
+    width: 65px;
+    height: 55px;
+    border: 1px double white;
+    border-radius: 10px;
+    color: white;
+    margin: 5px;
+}
+#logo:hover
+{
+    transition: 0.3s ease;
+    transform: scale(1.02);
+}
+.logoPart h1
+{
+    color: white;
+    font-size: 21px;
+    text-align: center;
+    margin-left: 20px;
+    text-decoration: underline;
+}
+.searchPart
+{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+#search
+{
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    font-family: cursive,monospace,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    margin: 5px;
+}
+#search:hover
+{
+    transition: 0.3s ease;
+    transform: scale(1.02);
+}
+#searchLogo
+{
+    width: 40px;
+    height: 25px;
+    color: white; 
+    margin: 5px;
+    cursor: pointer;
+}
+#searchLogo:hover
+{
+    transition: 0.3s ease;
+    transform: scale(1.08);
+}
+/*Main Part*/
+main
+{
+  margin-top: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.BeginnerUstaz
+{
+  width: 600px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.up
+{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+main #type
+{
+  color: #00ff33;
+  font-size: 22px;
+  text-decoration: underline;
+  margin: 10px;
+}
+main #nameOfUstaz
+{
+  color: #ffffff;
+  font-size: medium;
+  margin-left: 10px;
+}
+main #definition
+{
+  margin: 10px;
+  color: #ffffff;
+}
+#kitabName
+{
+  color: #00ff33;
+  font-size: 15px;
+  margin-left: 10px;
+  text-decoration: underline;
+}
+.under
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+main .BeginnerUstaz .container
+{
+  width: 95%;
+  height: 180px ;
+  background-color: #0000007d;
+  border-radius: 12px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .BeginnerUstaz .container:hover
+{
+  transition: 0.5s ease all;
+  box-shadow:  -7px -10px -20px black;
+ 
+}
+.container #photo
+{
+  max-width: 120px;
+  border: 2px solid white;
+  border-radius: 12px;
+}
+.container h1
+{
+  color: #ffffff;
+}
+main .defkitab
+{
+  display: contents;
+  width: 100%;
+  height: 150px;
+  color: black;
+  background-color: #4c87a7;
+}
+main #kuz
+{
+  background-color: #0075dc;
+}
+main #keshf
+{
+  background-color: tomato;
+}
+/*footer part starts here*/
+footer{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #000;
+  padding: 20px 0;
+  border-radius: 20px 20px 00 00;
+}
+.partOne
+{
+  width: 50%;
+  height: 100%;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+ul li
+{
+  margin: 4.7px 00;
+}
+.partOne h1
+{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 29px;
+}
+.partTwo
+{
+ width: 50%;
+ height: 100%;
+ color: rgb(255, 255, 255);
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+.partTwo h1
+{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 29px;
+}
+#logos
+{
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+a
+{
+  color: rgb(255, 255, 255);
+}
+.at
+{
+  /*background: linear-gradient(45deg, tomato,#0075dc);*/
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -20px 0;
+}
+.at p
+{
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+}
+@media (max-width:600px) {
+  .BeginnerUstaz
+  {
+    width: 90%;
+  }
+}
