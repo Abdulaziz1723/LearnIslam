@@ -14,7 +14,7 @@ export default function Footer() {
             <h1>Links</h1>
             <div>
                 <a href=""><img src="/public/telegram.png" id="logos" loading="lazy"/></a>
-                <a href=""><img src="/public/utube.jpg" id="logos" loading="lazy"/></a>
+                <a href=""><img src="/utube.jpg" id="logos" loading="lazy"/></a>
             </div>
         </div>
     </footer>
