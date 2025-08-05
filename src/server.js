@@ -5,8 +5,8 @@ export default[
     nameOfUstaz:'አቢ ኢስሃቅ',
     definition:'ስለ ኡስታዙ ለማወቅ ያህል...',
     kitaName:'ኹዝ-ዐቂደተክ',
-    photo:'./public/photos/kuz.jpeg',
-    link:'./public/courses/kuz.html'
+    photo:'/images/kuz.jpeg',
+    link:'/courses/kuz.html'
     },
     {
     id:'keshf',
@@ -14,7 +14,7 @@ export default[
     nameOfUstaz:'አቡ-አብዲላህ ኢብኑ ኽይሩ',
     definition:'ስለ ኡስታዙ ለማወቅ ያህል...',
     kitaName:'ከሽፍ አል-ሹቡሃት',
-    photo:'./public/photos/keshf.jpg',
-    link:'./public/courses/keshf.html'
+    photo:'/images/keshf.jpg',
+    link:'/courses/keshf.html'
     }
 ]

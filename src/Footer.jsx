@@ -13,8 +13,8 @@ export default function Footer() {
         <div className="partTwo">
             <h1>Links</h1>
             <div>
-                <a href=""><img src="/public/telegram.png" id="logos" loading="lazy"/></a>
-                <a href=""><img src="/utube.jpg" id="logos" loading="lazy"/></a>
+                <a href=""><img src="/images/telegram.png" id="logos" loading="lazy"/></a>
+                <a href=""><img src="/images/utube.jpg" id="logos" loading="lazy"/></a>
             </div>
         </div>
     </footer>
