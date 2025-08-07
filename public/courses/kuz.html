@@ -1,576 +1,272 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="tomato" />
-    <title>خذ عقيدتك</title>          
-    <style>
-      *{
-        margin: 0;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-       }
-       body
-       {
-        background-color: #ffffff;
-       }
-       /*header starts here*/
-       header
-       {
-        width: 100%;
-        height: 65px;
-        background-color: tomato;
-        position: fixed;
-        top: 0;
-        z-index: 100;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-       }
-       .svgs
-       {
-        width: 70%;
-        height: 90%;
-        display: flex;
-        flex-direction: row;
-        justify-content: start;
-        align-items: center;
-       }
-       .back-button
-       {
-        width: 50px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        color: #ffffff;
-       }
-       #back-button
-       {
-        color: #fff;
-       }
-        .mode
-       {
-        width: 26px;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        margin-left: 30px;
-       }
-       .night  
-       {
-        display: flex;
-        color: rgb(255, 255, 255);
-        width: 160%;
-        height: 80%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        animation: slide 2s ease;
-       }
-       #night-text  
-       {
-        display: flex;
-        color: rgb(255, 255, 255);
-        width: 100%;
-        height: 20%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        animation: slide 1s ease;
-       }
-       .day       
-       {
-        display: none;
-        color: rgb(255, 166, 0);
-        width: 160%;
-        height: 80%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        animation: slide 2s ease;
-       }
-       #day-text       
-       {
-        display: none;
-        color: rgb(255, 166, 0);
-        width: 100%;
-        height: 20%;
-        justify-content: center;
-        align-items: center;
-        animation: slide 1s ease;
-       }
-       .mode h1
-       {
-        text-align: center;
-        font-size: 11px;
-       }
-       .Pdf-container
-       {
-        width: 30%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-       }
-       #Pdf-button
-       {
-        width: auto;
-        color: #fff;
-        background-color: #00000000;
-        border: 1px solid white;
-        border-radius: 5px;
-        height: 35px;
-       }
-       @keyframes slide {
-        0%
-        {
-            transform: rotate(360deg);
-        }
-        50%
-        {
-            transform: rotate(-45deg);
-        }
-        100%
-        {
-            transform: rotate(0deg);
-        }
-       }
-       /*header ends here*/
-       /*main starts here*/
-       main
-       {
-        margin-top: 60px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-       }
-     .player {
-      background: tomato;
-      padding: 5px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      min-width: 320px;
-      height: auto;
-      margin: 20px;
-    }
-    .player h2
-    {
-      font-size: medium;
-      text-align: center;
-      color: #fff;
-    }
-    .controls {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .time {
-      font-size: 14px;
-      text-align: center;
-      color: #fff;
-    }
-    button {
-      background-color: transparent;
-      border: transparent;
-      font-size: 20px;
-      cursor: pointer;
-    }
-    input[type="range"] {
-      width: 100%;
-    }
-       @media (max-width: 600px) {
-       header
-       {
-        height: 50px;
-       }
-       .back-button
-       {
-        width: 26px;
-       }
-       .mode
-       {
-        width: 15px;
-       }
-       .mode h1
-       {
-        font-size: 10px;
-       }
-    }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خذ عقيدتك</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fdf6e3; color: #333; padding: 20px; }
+    .player { margin-bottom: 30px; border: 1px solid #ccc; padding: 15px; border-radius: 10px; background: #fffbe6; }
+    .controls { margin-top: 10px; display: flex; align-items: center; gap: 10px; }
+    .seekBar { flex: 1; }
+    .time { margin-top: 5px; font-size: 0.9em; color: #666; }
+    button.toggleBtn { font-size: 18px; cursor: pointer; }
+  </style>
 </head>
-<body id="body">
-    <header>
-        <div class="svgs">
-            <div class="mode" onclick="changeMode()">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="night" id="night">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
-                  </svg>  
-                  <div id="night-text"><h1 id="mata">Night</h1></div>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="day" id="day">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-                  </svg>             
-                  <div id="day-text"><h1 id="ken">Day</h1></div>
-            </div>
-        </div>
-            <div class="Pdf-container">
-              <a href="/my-app/public/pdfs/متن كشف الشّبهات.pdf"><button id="Pdf-button">Download PDF</button></a>  
-            </div>
-    </header>
-    <main id="main">
-        <div class="player">
-            <h2>Part:1</h2>
-            <audio id="audio" src="/kuz/part-1.mp3"></audio>
-          
-            <div class="controls">
-              <button id="toggleBtn">▶️</button>
-              <input type="range" id="seekBar" value="0" step="1" min="0"/>
-            </div>
-          
-            <div class="time">
-              <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
-            </div>
-          </div>
-          <div class="player">
-            <h2>Part:2</h2>
-            <audio id="audio" src="/kuz/part-2.mp3"></audio>
-          
-            <div class="controls">
-              <button id="toggleBtn">▶️</button>
-              <input type="range" id="seekBar" value="0" step="1" min="0"/>
-            </div>
-          
-            <div class="time">
-              <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
-            </div>
-          </div>
-          <div class="player">
-            <h2>Part:3</h2>
-            <audio id="audio" src="/kuz/part-3.mp3"></audio>
-          
-            <div class="controls">
-              <button id="toggleBtn">▶️</button>
-              <input type="range" id="seekBar" value="0" step="1" min="0"/>
-            </div>
-          
-            <div class="time">
-              <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
-            </div>
-          </div>
-          <div class="player">
-            <h2>Part:4</h2>
-            <audio id="audio" src="/kuz/part-4.mp3"></audio>
-          
-            <div class="controls">
-              <button id="toggleBtn">▶️</button>
-              <input type="range" id="seekBar" value="0" step="1" min="0"/>
-            </div>
-          
-            <div class="time">
-              <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
-            </div>
-          </div>
-          <div class="player">
-            <h2>Part:5</h2>
-            <audio id="audio" src="/kuz/part-5.mp3"></audio>
-          
-            <div class="controls">
-              <button id="toggleBtn">▶️</button>
-              <input type="range" id="seekBar" value="0" step="1" min="0"/>
-            </div>
-          
-            <div class="time">
-              <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
-            </div>
-          </div>
-          <div class="player">
-            <h2>Part:6</h2>
-            <audio id="audio" src="/kuz/part-6.mp3"></audio>
-          
-            <div class="controls">
-              <button id="toggleBtn">▶️</button>
-              <input type="range" id="seekBar" value="0" step="1" min="0"/>
-            </div>
-          
-            <div class="time">
-              <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
-            </div>
-          </div>
-          <div class="player">
-            <h2>Part:7</h2>
-            <audio id="audio" src="/kuz/part-7.mp3"></audio>
-          
-            <div class="controls">
-              <button id="toggleBtn">▶️</button>
-              <input type="range" id="seekBar" value="0" step="1" min="0"/>
-            </div>
-          
-            <div class="time">
-              <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
-            </div>
-          </div>
-          <div class="player">
-            <h2>Part:8</h2>
-            <audio id="audio" src="/kuz/part-8.mp3"></audio>
-          
-            <div class="controls">
-              <button id="toggleBtn">▶️</button>
-              <input type="range" id="seekBar" value="0" step="1" min="0"/>
-            </div>
-          
-            <div class="time">
-              <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
-            </div>
-          </div>
-          <div class="player">
-            <h2>Part:9</h2>
-            <audio id="audio" src="/kuz/part-9.mp3"></audio>
-          
-            <div class="controls">
-              <button id="toggleBtn">▶️</button>
-              <input type="range" id="seekBar" value="0" step="1" min="0"/>
-            </div>
-          
-            <div class="time">
-              <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
-            </div>
-          </div>
-          <div class="player">
-            <h2>Part:10</h2>
-            <audio id="audio" src="/kuz/part-10.mp3"></audio>
-          
-            <div class="controls">
-              <button id="toggleBtn">▶️</button>
-              <input type="range" id="seekBar" value="0" step="1" min="0"/>
-            </div>
-          
-            <div class="time">
-              <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
-            </div>
-          </div>
-          <div class="player">
-            <h2>Part:11</h2>
-            <audio id="audio" src="/kuz/part-11.mp3"></audio>
-          
-            <div class="controls">
-              <button id="toggleBtn">▶️</button>
-              <input type="range" id="seekBar" value="0" step="1" min="0"/>
-            </div>
-          
-            <div class="time">
-              <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
-            </div>
-          </div>
-          <div class="player">
-            <h2>Part:12</h2>
-            <audio id="audio" src="/kuz/part-12.mp3"></audio>
-          
-            <div class="controls">
-              <button id="toggleBtn">▶️</button>
-              <input type="range" id="seekBar" value="0" step="1" min="0"/>
-            </div>
-          
-            <div class="time">
-              <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
-            </div>
-          </div>
-          <div class="player">
-            <h2>Part:13</h2>
-            <audio id="audio" src="/kuz/part-13.mp3"></audio>
-          
-            <div class="controls">
-              <button id="toggleBtn">▶️</button>
-              <input type="range" id="seekBar" value="0" step="1" min="0"/>
-            </div>
-          
-            <div class="time">
-              <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
-            </div>
-          </div>
-          <div class="player">
-            <h2>Part:14</h2>
-            <audio id="audio" src="/kuz/part-14.mp3"></audio>
-          
-            <div class="controls">
-              <button id="toggleBtn">▶️</button>
-              <input type="range" id="seekBar" value="0" step="1" min="0"/>
-            </div>
-          
-            <div class="time">
-              <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
-            </div>
-          </div>
-          <div class="player">
-            <h2>Part:15</h2>
-            <audio id="audio" src="/kuz/part-15.mp3"></audio>
-          
-            <div class="controls">
-              <button id="toggleBtn">▶️</button>
-              <input type="range" id="seekBar" value="0" step="1" min="0"/>
-            </div>
-          
-            <div class="time">
-              <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
-            </div>
-          </div>
-          <div class="player">
-            <h2>Part:16</h2>
-            <audio id="audio" src="/kuz/part-16.mp3"></audio>
-          
-            <div class="controls">
-              <button id="toggleBtn">▶️</button>
-              <input type="range" id="seekBar" value="0" step="1" min="0"/>
-            </div>
-          
-            <div class="time">
-              <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
-            </div>
-          </div>
-    </main>
-    <script>
-  const audio = document.getElementById("audio");
-  const toggleBtn = document.getElementById("toggleBtn");
-  const seekBar = document.getElementById("seekBar");
-  const currentTimeEl = document.getElementById("currentTime");
-  const durationEl = document.getElementById("duration");
+<body>
+  <h1>📖 خذ عقيدتك</h1>
+  
+    <div class="player">
+      <h2>Part 1</h2>
+      <audio src="/kesh/part-1.mp3" preload="none"></audio>
+      <div class="controls">
+        <button class="toggleBtn">▶️</button>
+        <input type="range" class="seekBar" value="0" step="1" min="0">
+      </div>
+      <div class="time">
+        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
+      </div>
+    </div>
+    
 
-  // Format seconds into mm:ss
-  function formatTime(sec) {
-    const minutes = Math.floor(sec / 60);
-    const seconds = Math.floor(sec % 60);
-    return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-  }
+    <div class="player">
+      <h2>Part 2</h2>
+      <audio src="/kesh/part-2.mp3" preload="none"></audio>
+      <div class="controls">
+        <button class="toggleBtn">▶️</button>
+        <input type="range" class="seekBar" value="0" step="1" min="0">
+      </div>
+      <div class="time">
+        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
+      </div>
+    </div>
+    
 
-  // Toggle play/pause
-  toggleBtn.addEventListener("click", () => {
-    if (audio.paused) {
-      audio.play();
-      toggleBtn.textContent = "⏸️";
-    } else {
-      audio.pause();
-      toggleBtn.textContent = "▶️";
+    <div class="player">
+      <h2>Part 3</h2>
+      <audio src="/kesh/part-3.mp3" preload="none"></audio>
+      <div class="controls">
+        <button class="toggleBtn">▶️</button>
+        <input type="range" class="seekBar" value="0" step="1" min="0">
+      </div>
+      <div class="time">
+        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
+      </div>
+    </div>
+    
+
+    <div class="player">
+      <h2>Part 4</h2>
+      <audio src="/kesh/part-4.mp3" preload="none"></audio>
+      <div class="controls">
+        <button class="toggleBtn">▶️</button>
+        <input type="range" class="seekBar" value="0" step="1" min="0">
+      </div>
+      <div class="time">
+        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
+      </div>
+    </div>
+    
+
+    <div class="player">
+      <h2>Part 5</h2>
+      <audio src="/kesh/part-5.mp3" preload="none"></audio>
+      <div class="controls">
+        <button class="toggleBtn">▶️</button>
+        <input type="range" class="seekBar" value="0" step="1" min="0">
+      </div>
+      <div class="time">
+        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
+      </div>
+    </div>
+    
+
+    <div class="player">
+      <h2>Part 6</h2>
+      <audio src="/kesh/part-6.mp3" preload="none"></audio>
+      <div class="controls">
+        <button class="toggleBtn">▶️</button>
+        <input type="range" class="seekBar" value="0" step="1" min="0">
+      </div>
+      <div class="time">
+        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
+      </div>
+    </div>
+    
+
+    <div class="player">
+      <h2>Part 7</h2>
+      <audio src="/kesh/part-7.mp3" preload="none"></audio>
+      <div class="controls">
+        <button class="toggleBtn">▶️</button>
+        <input type="range" class="seekBar" value="0" step="1" min="0">
+      </div>
+      <div class="time">
+        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
+      </div>
+    </div>
+    
+
+    <div class="player">
+      <h2>Part 8</h2>
+      <audio src="/kesh/part-8.mp3" preload="none"></audio>
+      <div class="controls">
+        <button class="toggleBtn">▶️</button>
+        <input type="range" class="seekBar" value="0" step="1" min="0">
+      </div>
+      <div class="time">
+        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
+      </div>
+    </div>
+    
+
+    <div class="player">
+      <h2>Part 9</h2>
+      <audio src="/kesh/part-9.mp3" preload="none"></audio>
+      <div class="controls">
+        <button class="toggleBtn">▶️</button>
+        <input type="range" class="seekBar" value="0" step="1" min="0">
+      </div>
+      <div class="time">
+        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
+      </div>
+    </div>
+    
+
+    <div class="player">
+      <h2>Part 10</h2>
+      <audio src="/kesh/part-10.mp3" preload="none"></audio>
+      <div class="controls">
+        <button class="toggleBtn">▶️</button>
+        <input type="range" class="seekBar" value="0" step="1" min="0">
+      </div>
+      <div class="time">
+        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
+      </div>
+    </div>
+    
+
+    <div class="player">
+      <h2>Part 11</h2>
+      <audio src="/kesh/part-11.mp3" preload="none"></audio>
+      <div class="controls">
+        <button class="toggleBtn">▶️</button>
+        <input type="range" class="seekBar" value="0" step="1" min="0">
+      </div>
+      <div class="time">
+        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
+      </div>
+    </div>
+    
+
+    <div class="player">
+      <h2>Part 12</h2>
+      <audio src="/kesh/part-12.mp3" preload="none"></audio>
+      <div class="controls">
+        <button class="toggleBtn">▶️</button>
+        <input type="range" class="seekBar" value="0" step="1" min="0">
+      </div>
+      <div class="time">
+        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
+      </div>
+    </div>
+    
+
+    <div class="player">
+      <h2>Part 13</h2>
+      <audio src="/kesh/part-13.mp3" preload="none"></audio>
+      <div class="controls">
+        <button class="toggleBtn">▶️</button>
+        <input type="range" class="seekBar" value="0" step="1" min="0">
+      </div>
+      <div class="time">
+        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
+      </div>
+    </div>
+    
+
+    <div class="player">
+      <h2>Part 14</h2>
+      <audio src="/kesh/part-14.mp3" preload="none"></audio>
+      <div class="controls">
+        <button class="toggleBtn">▶️</button>
+        <input type="range" class="seekBar" value="0" step="1" min="0">
+      </div>
+      <div class="time">
+        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
+      </div>
+    </div>
+    
+
+    <div class="player">
+      <h2>Part 15</h2>
+      <audio src="/kesh/part-15.mp3" preload="none"></audio>
+      <div class="controls">
+        <button class="toggleBtn">▶️</button>
+        <input type="range" class="seekBar" value="0" step="1" min="0">
+      </div>
+      <div class="time">
+        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
+      </div>
+    </div>
+    
+
+    <div class="player">
+      <h2>Part 16</h2>
+      <audio src="/kesh/part-16.mp3" preload="none"></audio>
+      <div class="controls">
+        <button class="toggleBtn">▶️</button>
+        <input type="range" class="seekBar" value="0" step="1" min="0">
+      </div>
+      <div class="time">
+        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
+      </div>
+    </div>
+    
+  <script>
+    document.querySelectorAll('.player').forEach(player => {
+      const audio = player.querySelector('audio');
+      const playBtn = player.querySelector('.toggleBtn');
+      const seekBar = player.querySelector('.seekBar');
+      const currentTimeEl = player.querySelector('.currentTime');
+      const durationEl = player.querySelector('.duration');
+
+      playBtn.addEventListener('click', () => {
+        if (audio.paused) {
+          audio.play();
+          playBtn.textContent = "⏸️";
+        } else {
+          audio.pause();
+          playBtn.textContent = "▶️";
+        }
+      });
+
+      audio.addEventListener('loadedmetadata', () => {
+        seekBar.max = audio.duration;
+        durationEl.textContent = formatTime(audio.duration);
+      });
+
+      audio.addEventListener('timeupdate', () => {
+        seekBar.value = audio.currentTime;
+        currentTimeEl.textContent = formatTime(audio.currentTime);
+      });
+
+      seekBar.addEventListener('input', () => {
+        audio.currentTime = seekBar.value;
+      });
+
+      audio.addEventListener('ended', () => {
+        playBtn.textContent = "▶️";
+      });
+    });
+
+    function formatTime(sec) {
+      const minutes = Math.floor(sec / 60);
+      const seconds = Math.floor(sec % 60);
+      return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
     }
-  });
-
-  // Update UI when audio metadata is loaded
-  audio.addEventListener("loadedmetadata", () => {
-    seekBar.max = audio.duration;
-    durationEl.textContent = formatTime(audio.duration);
-  });
-
-  // Update seek bar & time display as audio plays
-  audio.addEventListener("timeupdate", () => {
-    seekBar.value = audio.currentTime;
-    currentTimeEl.textContent = formatTime(audio.currentTime);
-  });
-
-  // Seek manually
-  seekBar.addEventListener("input", () => {
-    audio.currentTime = seekBar.value;
-  });
-  // Reset icon when audio ends
-  audio.addEventListener("ended", () => {
-    toggleBtn.textContent = "▶️";
-  });
-            const run = (idofelement) => {
-                open(idofelement)
-        }
-        function dropDown(id) {
-            const firstSubPart = document.getElementById("sub-part"); 
-            const subParts = document.getElementsByClassName("sub-part");
-            let childs = document.getElementById(id).childNodes;
-            let textCotent = childs[3].childNodes[1].childNodes[1].textContent;
-            console.log(textCotent);
-            const buttonArrow = childs[1].childNodes[5].childNodes[1].childNodes[1];
-            const secondButtonArrow = childs[1].childNodes[5].childNodes[1].childNodes[3];
-            childs = [childs[3],childs[5],childs[7],childs[9],childs[11]]
-            if (childs[0].style.display == "flex")
-            {
-            for(let i = 0; i < childs.length; i++)
-                {
-                childs[i].style.display = "none";
-                }
-                buttonArrow.style.display = "flex";
-                secondButtonArrow.style.display = "none";
-            }
-            else
-            {
-            for(let i = 0; i < childs.length; i++)
-                {
-                    childs[i].style.display = "flex";
-                    childs[0].style.animation = "appear 0.2s ease";
-                    childs[1].style.animation = "appear 0.3s ease";
-                    childs[2].style.animation = "appear 0.4s ease";
-                    childs[3].style.animation = "appear 0.5s ease";
-                    childs[4].style.animation = "appear 0.9s ease";
-                }
-                buttonArrow.style.display = "none";
-                secondButtonArrow.style.display = "flex";
-              }
-        }
-        const changeMode = () => {
-            const body = document.getElementById("body");
-            const day = document.getElementById("day");
-            const dayText = document.getElementById("day-text");
-            const night = document.getElementById("night");
-            const nightText = document.getElementById("night-text");
-            const container = document.getElementsByClassName("container");
-            const sub_part = document.getElementsByClassName("sub-part");
-            //this is on day mode
-             if(day.style.display == "flex"){
-                for(let i = 0; i < container.length; i++){
-                    container[i].style.backgroundColor = "#fff";
-                    container[i].style.border = "1px #000 solid";
-                    container[i].style.color = "#000";
-                    container[i].style.boxShadow = "inset 1px 2px 10px tomato";
-                }
-                for(let i = 0; i < sub_part.length; i++){
-                    sub_part[i].style.backgroundColor = "#fff";
-                    sub_part[i].style.border = "1px #000 solid";
-                    sub_part[i].style.color = "#000";
-                    sub_part[i].style.boxShadow = "inset 2px 5px 20px #000";
-                }
-                day.style.display = "none";
-                dayText.style.display = "none";
-                night.style.display = "flex";
-                nightText.style.display = "flex";
-                body.style.backgroundColor = "#fff"
-            }
-            //this is night mode
-            else
-            {
-                for(let i = 0; i < container.length; i++){
-                    container[i].style.backgroundColor = "#18405855";
-                    container[i].style.border = "1px #fff solid";
-                    container[i].style.color = "#fff";
-                    container[i].style.boxShadow = "inset 1px 2px 10px tomato";
-                }
-                for(let i = 0; i < sub_part.length; i++){
-                    sub_part[i].style.backgroundColor = "#121212";
-                    sub_part[i].style.border = "1px #fff solid";
-                    sub_part[i].style.color = "#fff";
-                    sub_part[i].style.boxShadow = "inset 2px 5px 20px #fff";
-                }
-                day.style.display = "flex";
-                dayText.style.display = "flex";
-                night.style.display = "none";
-                nightText.style.display = "none";
-                body.style.backgroundColor = "#121212";
-            }
-        }
-        // automatic role based on the actuall time
-        // handling the users current time or hour
-        let currentHour = new Date();
-        currentHour = currentHour.getHours();
-        if (currentHour >= 18 || currentHour < 6) {
-            //changes to night mode
-            changeMode()
-        }
-      </script>
+  </script>
 </body>
 </html>
