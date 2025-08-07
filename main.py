@@ -59,21 +59,22 @@ def git_commit_and_push(downloaded_count):
         repo.index.commit(f"🔊 Auto update: {downloaded_count} new audio file(s)")
 
         origin = repo.remote(name='origin')
-        active_branch = repo.active_branch.name
+        branch_name = "master"  # force branch to master
 
         try:
-            # Try normal push
-            origin.push()
+            origin.push(branch_name)
         except GitCommandError as e:
             if "no upstream" in str(e) or "has no upstream branch" in str(e):
-                print(f"🌱 Setting upstream to origin/{active_branch}...")
-                repo.git.push('--set-upstream', 'origin', active_branch)
+                print(f"🌱 Setting upstream to origin/{branch_name}...")
+                repo.git.push('--set-upstream', 'origin', branch_name)
             else:
                 raise e
 
         print("✅ Pushed to GitHub!")
     except Exception as e:
         print("❌ Git push failed:", e)
+
+
 
 # === Telegram Client ===
 client = TelegramClient('session', api_id, api_hash)
