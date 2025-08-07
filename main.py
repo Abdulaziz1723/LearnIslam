@@ -140,7 +140,7 @@ with client:
 from git import Repo
 
 repo = Repo(REPO_LOCAL_PATH)
-branch = "main"  # or 'master' if your repo uses that
+branch = "master"  # or 'master' if your repo uses that
 
 if branch not in repo.heads:
     repo.git.checkout('-b', branch)
