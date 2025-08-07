@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/images/fav1.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مَدْرَسَةْ بَيَان لِلنّاس</title>
+  </head>
+  <body id="root">
+    <script type="module" src="/src/App.jsx"></script>
+    <script>
+      const body = document.getElementById('root');
+      function dark(){
+        body.style.backgroundColor="#020202c9";
+      }
+      function light() {
+        body.style.backgroundColor="#fff";
+      }
+      let currentHour = new Date().getHours();
+      if (currentHour >= 19 || currentHour < 7) {
+          dark();
+        }
+        else light();
+    </script>
+  </body>
+</html>

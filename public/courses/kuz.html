@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0075dc" />
+    <title>خذ عقيدتك</title>
+    <style>
+      *{
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+       }
+       body
+       {
+        background-color: #ffffff;
+       }
+       /*header starts here*/
+       header
+       {
+        width: 100%;
+        height: 65px;
+        background-color: #0075dc;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+       }
+       .svgs
+       {
+        width: 70%;
+        height: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+       }
+       .back-button
+       {
+        width: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        color: #ffffff;
+       }
+       #back-button
+       {
+        color: #fff;
+       }
+        .mode
+       {
+        width: 26px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        margin-left: 30px;
+       }
+       .night  
+       {
+        display: flex;
+        color: rgb(255, 255, 255);
+        width: 160%;
+        height: 80%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        animation: slide 2s ease;
+       }
+       #night-text  
+       {
+        display: flex;
+        color: rgb(255, 255, 255);
+        width: 100%;
+        height: 20%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        animation: slide 1s ease;
+       }
+       .day       
+       {
+        display: none;
+        color: rgb(255, 166, 0);
+        width: 160%;
+        height: 80%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        animation: slide 2s ease;
+       }
+       #day-text       
+       {
+        display: none;
+        color: rgb(255, 166, 0);
+        width: 100%;
+        height: 20%;
+        justify-content: center;
+        align-items: center;
+        animation: slide 1s ease;
+       }
+       .mode h1
+       {
+        text-align: center;
+        font-size: 11px;
+       }
+       .Pdf-container
+       {
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+       #Pdf-button
+       {
+        width: auto;
+        color: #fff;
+        background-color: #00000000;
+        border: 1px solid white;
+        border-radius: 5px;
+        height: 35px;
+       }
+       @keyframes slide {
+        0%
+        {
+            transform: rotate(360deg);
+        }
+        50%
+        {
+            transform: rotate(-45deg);
+        }
+        100%
+        {
+            transform: rotate(0deg);
+        }
+       }
+       /*header ends here*/
+       /*main starts here*/
+       main
+       {
+        width: 100%;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+       }
+       .part
+       {
+        width: 100%;
+        height: auto;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        cursor: pointer;
+       }
+       ::-webkit-scrollbar
+       {
+        width: 0;
+        height: 0;
+       }
+       .container
+       {
+        min-width: 500px;
+        height: 60px;
+        background-color: #fff;
+        border: 1px solid #000;
+        box-shadow:  1px 2px 10px #000;
+        border-radius: 12px;
+        margin: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        cursor: pointer;
+        animation: in ee8s;
+       }
+       @keyframes in {
+        from
+        {
+            transform: translateY(-65px);
+        }
+       }
+       .text
+       {
+        width: 70%;
+        height: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+       }
+       .text h1
+       {
+        width: 25%;
+        margin-left: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-language-override: normal;
+        font-size: 15px;
+        text-decoration: underline;
+       }
+       .text h2
+       {
+        width: auto;
+        text-align: center;
+        font-size: 15px;
+        text-decoration: underline;
+       }
+       .container .percent
+       {
+        width: 20%;
+        height: 80%;
+        background-color: #0075dc;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+       .percent h1
+       {
+        font-size: 23px;
+       }
+       .container .button
+       {
+        width: 10%;
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+       button
+       {
+        width: auto;
+        height: max-content;
+        background-color: transparent;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+       .button
+       {
+        border-radius: 10px;
+        background-color: #0075dc;
+        color: #f30000;
+        margin: 5px;
+       }
+       button .down-button
+       {
+        display: flex;
+        width: 30px;
+        height: auto;
+        background-color: transparent;
+        cursor: pointer;
+       }
+       button .up-button
+       {
+        display: none;
+        width: 30px;
+        height: auto;
+        background-color: transparent;
+        cursor: pointer;
+       }
+       .sub-part
+       {
+        width: 450px;
+        height: 50px;
+        background-color: #fff;
+        border: #000 1px solid;
+        box-shadow: inset  2px 5px 20px #000;
+        margin: 8px;
+        display: none;
+        justify-content: start;
+        align-items: center;
+        border-radius: 12px;
+        cursor: pointer;
+       }
+       .sub-part :hover{
+        transform: scale(1.018);
+        transition: ee3s;
+       }
+       @keyframes appear {
+        from
+        {
+            transform: translateY(-500px);
+        }
+       }
+       a
+       {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+       }
+       .text-part
+       {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+       }
+       .text-part  h1
+       {
+        width: 20%;
+        font-size: 15px;
+        text-decoration: underline;
+       }
+       .text-part h2
+       {
+        min-width: 60%;
+        text-align: center;
+        font-size: 16px;
+       }
+       .text-part h3
+       {
+        display: flex;
+        width: 5%;
+        color: #0f0;
+        font-size: 20px;
+        text-shadow: #000 1px 2px 5px;
+       }
+       @media (max-width: 600px) {
+       header
+       {
+        height: 50px;
+       }
+       main
+       {
+        margin-top: 65px;
+       }
+       .container
+       {
+        min-width: 90%;
+        height: 55px;
+       }
+       .text h1
+       {
+        margin-left: 5px;
+        font-size: 12px;
+       }
+       .text h2
+       {
+        font-size: 12px;
+       }
+       .sub-part
+       {
+        width: 85%;
+        margin: 1px;
+       }
+       .sub-part :hover
+       {
+        transform: scale(1.009);
+       }
+       .text-part
+       {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+       }
+       .text-part  h1
+       {
+        width: 20%;
+        font-size: 12px;
+       }
+       .text-part h2
+       {
+        width: 60%;
+        font-size: 12px;
+       }
+       .text-part h3
+       {
+        width: 5%;
+        font-size: 15px;
+       }    
+       .back-button
+       {
+        width: 26px;
+       }
+       .mode
+       {
+        width: 15px;
+       }
+       .mode h1
+       {
+        font-size: 10px;
+       }
+    }
+
+    </style>
+</head>
+<body id="body">
+    <header>
+        <div class="svgs">
+            <div class="mode" onclick="changeMode()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="night" id="night">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                  </svg>  
+                  <div id="night-text"><h1 id="mata">Night</h1></div>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="day" id="day">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                  </svg>             
+                  <div id="day-text"><h1 id="ken">Day</h1></div>
+            </div>
+        </div>
+            <div class="Pdf-container">
+                <button id="Pdf-button">Download PDF</button>
+            </div>
+    </header>
+    <main>
+        <div class="part" id="part_one">
+            <div class="container" onclick = "dropDown('part_one')">
+                <div class="text">
+                    <h1>Unit : 1</h1>
+                </div>
+                <div class="percent" id="percent">
+                    <h1>0%</h1>
+                </div>
+                <div class="button">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="down-button">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                          </svg>                            
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="up-button">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                          </svg>                                                                    
+                    </button>
+                </div>
+            </div>
+            <div class = "sub-part">
+                <div class="text-part">
+                        <h1><li><u>Part : 1</u></li></h1>
+                        <h2>Der.Name</h2>
+                        <input type="radio" name="n" id="radio" onclick="checked()">
+                </div>
+            </div>
+            <div class="sub-part">
+                <div class="text-part">
+                        <h1><li><u>Part : 2</u></li></h1>
+                        <h2>Der.Name</h2>
+                        <input type="radio" name="n" id="radio" onclick="checked()">
+                </div>
+            </div>
+            <div class="sub-part">
+                <div class="text-part">
+                    <h1><li><u>Part : 3</u></li></h1>
+                    <h2>Ders.Name</h2>
+                    <input type="radio" name="n" id="radio" onclick="checked()">
+                </div>
+            </div>
+            <div class="sub-part">
+                <div class="text-part">
+                    <h1><li><u>Part : 4</u></li></h1>
+                    <h2>Ders.Name</h2>
+                    <input type="radio" name="n" id="radio" onclick="checked()">
+                </div>
+            </div>
+            <div class="sub-part">
+                <div class="text-part">
+                    <h1><li><u>Part : 5</u></li></h1>
+                    <h2>Ders.Name</h2>
+                    <input type="radio" name="n" id="radio" onclick="checked()">
+                </div>
+            </div>
+        </div>
+        <div class="part" id="part_two">
+            <div class="container" onclick = "dropDown('part_two')">
+                <div class="text">
+                    <h1>Unit : 2</h1>
+                </div>
+                <div class="percent">
+                    <h1>0%</h1>
+                </div>
+                <div class="button">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="down-button">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>        
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="up-button">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                        </svg>                                             
+                    </button>
+                </div>
+            </div>
+            <div class = "sub-part">
+                <div class="text-part">
+                    <h1><li><u>Part : 1</u></li></h1>
+                    <h2>Ders.Name</h2>
+                    <input type="radio" name="n" id="radio" onclick="checked()">
+                </div>
+            </div>
+            <div class="sub-part">
+                <div class="text-part">
+                    <h1><li><u>Part : 2</u></li></h1>
+                    <h2>Ders.Name</h2>
+                    <input type="radio" name="n" id="radio" onclick="checked()">
+                </div>
+            </div>
+                        <div class="sub-part">
+                <div class="text-part">
+                    <h1><li><u>Part : 3</u></li></h1>
+                    <h2>Ders.Name</h2>
+                    <input type="radio" name="n" id="radio" onclick="checked()">
+                </div>
+            </div>
+            <div class="sub-part">
+                <div class="text-part">
+                    <h1><li><u>Part : 4</u></li></h1>
+                    <h2>Ders.Name</h2>
+                    <input type="radio" name="n" id="radio" onclick="checked()">
+                </div>
+            </div>
+            <div class="sub-part">
+                <div class="text-part">
+                    <h1><li><u>Part : 5</u></li></h1>
+                    <h2>Ders.Name</h2>
+                    <input type="radio" name="n" id="radio" onclick="checked()">
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+            const run = (idofelement) => {
+                open(idofelement)
+        }
+        function dropDown(id) {
+            const firstSubPart = document.getElementById("sub-part"); 
+            const subParts = document.getElementsByClassName("sub-part");
+            let childs = document.getElementById(id).childNodes;
+            let textCotent = childs[3].childNodes[1].childNodes[1].textContent;
+            console.log(textCotent);
+            const buttonArrow = childs[1].childNodes[5].childNodes[1].childNodes[1];
+            const secondButtonArrow = childs[1].childNodes[5].childNodes[1].childNodes[3];
+            childs = [childs[3],childs[5],childs[7],childs[9],childs[11]]
+            if (childs[0].style.display == "flex")
+            {
+            for(let i = 0; i < childs.length; i++)
+                {
+                childs[i].style.display = "none";
+                }
+                buttonArrow.style.display = "flex";
+                secondButtonArrow.style.display = "none";
+            }
+            else
+            {
+            for(let i = 0; i < childs.length; i++)
+                {
+                    childs[i].style.display = "flex";
+                    childs[0].style.animation = "appear 0.2s ease";
+                    childs[1].style.animation = "appear 0.3s ease";
+                    childs[2].style.animation = "appear 0.4s ease";
+                    childs[3].style.animation = "appear 0.5s ease";
+                    childs[4].style.animation = "appear 0.9s ease";
+                }
+                buttonArrow.style.display = "none";
+                secondButtonArrow.style.display = "flex";
+              }
+        }
+        const changeMode = () => {
+            const body = document.getElementById("body");
+            const day = document.getElementById("day");
+            const dayText = document.getElementById("day-text");
+            const night = document.getElementById("night");
+            const nightText = document.getElementById("night-text");
+            const container = document.getElementsByClassName("container");
+            const sub_part = document.getElementsByClassName("sub-part");
+            //this is on day mode
+             if(day.style.display == "flex"){
+                for(let i = 0; i < container.length; i++){
+                    container[i].style.backgroundColor = "#fff";
+                    container[i].style.border = "1px #000 solid";
+                    container[i].style.color = "#000";
+                    container[i].style.boxShadow = "inset 1px 2px 10px #0075dc";
+                }
+                for(let i = 0; i < sub_part.length; i++){
+                    sub_part[i].style.backgroundColor = "#fff";
+                    sub_part[i].style.border = "1px #000 solid";
+                    sub_part[i].style.color = "#000";
+                    sub_part[i].style.boxShadow = "inset 2px 5px 20px #000";
+                }
+                day.style.display = "none";
+                dayText.style.display = "none";
+                night.style.display = "flex";
+                nightText.style.display = "flex";
+                body.style.backgroundColor = "#fff"
+            }
+            //this is night mode
+            else
+            {
+                for(let i = 0; i < container.length; i++){
+                    container[i].style.backgroundColor = "#18405855";
+                    container[i].style.border = "1px #fff solid";
+                    container[i].style.color = "#fff";
+                    container[i].style.boxShadow = "inset 1px 2px 10px #0075dc";
+                }
+                for(let i = 0; i < sub_part.length; i++){
+                    sub_part[i].style.backgroundColor = "#121212";
+                    sub_part[i].style.border = "1px #fff solid";
+                    sub_part[i].style.color = "#fff";
+                    sub_part[i].style.boxShadow = "inset 2px 5px 20px #fff";
+                }
+                day.style.display = "flex";
+                dayText.style.display = "flex";
+                night.style.display = "none";
+                nightText.style.display = "none";
+                body.style.backgroundColor = "#121212";
+            }
+        }
+        // automatic role based on the actuall time
+        // handling the users current time or hour
+        let currentHour = new Date();
+        currentHour = currentHour.getHours();
+        if (currentHour >= 18 || currentHour < 6) {
+            //changes to night mode
+            changeMode()
+        }
+      </script>
+</body>
+</html>
