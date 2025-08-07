@@ -16,7 +16,7 @@ if not all([api_id_str, api_hash, phone, channel]):
 api_id = int(api_id_str)
 
 # === 📁 PATH CONFIG ===
-REACT_PUBLIC_DIR = "react-frontend/public"  # <-- change to your actual path if needed
+REACT_PUBLIC_DIR = "public"  # <-- change to your actual path if needed
 LAST_ID_FILE = "last_id.txt"
 
 # === 🌍 GIT CONFIG ===
