@@ -7,6 +7,5 @@ const root = createRoot(document.getElementById('main'));
 
 root.render(
   <StrictMode>
-    <h1>hello</h1>
 </StrictMode>
 )
