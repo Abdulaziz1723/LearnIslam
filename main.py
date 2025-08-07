@@ -49,25 +49,31 @@ def save_last_id(msg_id):
 def clean_filename(name):
     return re.sub(r'[\\/*?:"<>|]', "", name)
 
-def git_commit_and_push(downloaded_count):
-    print("📁 Checking if this is a Git repo at:", REPO_LOCAL_PATH)
-    print("📂 .git folder exists?", os.path.exists(os.path.join(REPO_LOCAL_PATH, ".git")))
-    print("📄 Files in REPO_LOCAL_PATH:", os.listdir(REPO_LOCAL_PATH))
+from git import Repo, GitCommandError
 
+def git_commit_and_push(downloaded_count):
+    print("🚀 Committing and pushing to GitHub...")
     try:
         repo = Repo(REPO_LOCAL_PATH)
-        repo.git.add(all=True)
+        repo.git.add(A=True)
+        repo.index.commit(f"🔊 Auto update: {downloaded_count} new audio file(s)")
 
-        if repo.is_dirty():
-            repo.index.commit(f"⬇️ Auto downloaded {downloaded_count} new audio(s)")
-            origin = repo.remote(name='origin')
-            print("🚀 Committing and pushing to GitHub...")
+        origin = repo.remote(name='origin')
+        active_branch = repo.active_branch.name
+
+        try:
+            # Try normal push
             origin.push()
-            print("✅ Push successful!")
-        else:
-            print("😴 No changes to commit.")
+        except GitCommandError as e:
+            if "no upstream" in str(e) or "has no upstream branch" in str(e):
+                print(f"🌱 Setting upstream to origin/{active_branch}...")
+                repo.git.push('--set-upstream', 'origin', active_branch)
+            else:
+                raise e
+
+        print("✅ Pushed to GitHub!")
     except Exception as e:
-        print("❌ Git push failed:", str(e))
+        print("❌ Git push failed:", e)
 
 # === Telegram Client ===
 client = TelegramClient('session', api_id, api_hash)
