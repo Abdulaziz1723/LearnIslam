@@ -137,5 +137,28 @@ async def main():
 
 with client:
     client.loop.run_until_complete(main())
+from git import Repo
+
+repo = Repo(REPO_LOCAL_PATH)
+branch = "main"  # or 'master' if your repo uses that
+
+if branch not in repo.heads:
+    repo.git.checkout('-b', branch)
+else:
+    repo.heads[branch].checkout()
+
+if repo.is_dirty(untracked_files=True):
+    repo.git.add(A=True)
+    repo.index.commit("Auto commit: new audio files downloaded")
+else:
+    print("No changes to commit.")
+
+origin = repo.remotes.origin
+
+try:
+    origin.push(refspec=f"{branch}:{branch}")
+    print(f"✅ Pushed to GitHub on branch {branch}!")
+except Exception as e:
+    print(f"❌ Git push failed: {e}")
 
 
