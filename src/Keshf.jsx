@@ -22,3 +22,5 @@ root.render(
       </div>
 </StrictMode>
 )
+
+export default App
