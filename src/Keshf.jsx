@@ -9,7 +9,7 @@ root.render(
   <StrictMode>
           <div class="player">
         <h2>Part:2</h2>
-        <audio id="audio" src="part-11.mp3"></audio>
+        <audio id="audio" src="/kesh/part-11.mp3"></audio>
       
         <div class="controls">
           <button id="toggleBtn">▶️</button>
