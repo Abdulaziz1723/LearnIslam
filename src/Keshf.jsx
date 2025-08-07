@@ -8,7 +8,7 @@ const root = createRoot(document.getElementById('main'));
 root.render(
   <StrictMode>
           <div class="player">
-        <h2>Part:1</h2>
+        <h2>Part:2</h2>
         <audio id="audio" src="part-11.mp3"></audio>
       
         <div class="controls">
