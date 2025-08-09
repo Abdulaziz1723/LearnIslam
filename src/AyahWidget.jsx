@@ -30,11 +30,11 @@ const AyahWidget = () => {
 
   return (
     <div style={{
-      minWidth: "80%",
+      maxWidth: "80%",
       background: "#fff",
       border: "2px solid #000",
       borderRadius: "12px",
-      padding: "15px auto",
+      padding: "15px",
       fontFamily: "sans-serif",
       margin: "20px auto",
       textAlign: "center"
