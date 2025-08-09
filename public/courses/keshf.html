@@ -1,271 +1,60 @@
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang= 'en'>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>خذ عقيدتك</title>
+  <meta charset= 'UTF-8'>
+  <meta name= 'viewport' content= 'width=device-width, initial-scale=1.0'>
+  <title>كشف الشبهات</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #fdf6e3; color: #333; padding: 20px; }
-    .player { margin-bottom: 30px; border: 1px solid #ccc; padding: 15px; border-radius: 10px; background: #fffbe6; }
-    .controls { margin-top: 10px; display: flex; align-items: center; gap: 10px; }
-    .seekBar { flex: 1; }
-    .time { margin-top: 5px; font-size: 0.9em; color: #666; }
-    button.toggleBtn { font-size: 18px; cursor: pointer; }
+    *{margin: 0;}
+    body { font-family: Arial, sans-serif; background: #ffffff; padding: 0; margin: 0;}
+    header {width: 100%; height: 60px; background-color: tomato; display: flex; justify-content: center; align-items: center;}
+    header h1{ color: white;}
+    main{display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 10px;}
+    main .p1 { border-radius: 6px; margin-bottom: 15px; border: #000 1px solid; background-color: aliceblue;}
+    main h5{ font-size: medium; margin-top: 10px; margin-bottom: 2px; text-decoration: underline; color: #000; text-transform: capitalize;}
   </style>
 </head>
-<body>
-  <h1>📖 خذ عقيدتك</h1>
-  
-    <div class="player">
-      <h2>Part 1</h2>
-      <audio src="/kesh/part-1.mp3" preload="none"></audio>
-      <div class="controls">
-        <button class="toggleBtn">▶️</button>
-        <input type="range" class="seekBar" value="0" step="1" min="0">
-      </div>
-      <div class="time">
-        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
-      </div>
-    </div>
-    
-
-    <div class="player">
-      <h2>Part 2</h2>
-      <audio src="/kesh/part-2.mp3" preload="none"></audio>
-      <div class="controls">
-        <button class="toggleBtn">▶️</button>
-        <input type="range" class="seekBar" value="0" step="1" min="0">
-      </div>
-      <div class="time">
-        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
-      </div>
-    </div>
-    
-
-    <div class="player">
-      <h2>Part 3</h2>
-      <audio src="/kesh/part-3.mp3" preload="none"></audio>
-      <div class="controls">
-        <button class="toggleBtn">▶️</button>
-        <input type="range" class="seekBar" value="0" step="1" min="0">
-      </div>
-      <div class="time">
-        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
-      </div>
-    </div>
-    
-
-    <div class="player">
-      <h2>Part 4</h2>
-      <audio src="/kesh/part-4.mp3" preload="none"></audio>
-      <div class="controls">
-        <button class="toggleBtn">▶️</button>
-        <input type="range" class="seekBar" value="0" step="1" min="0">
-      </div>
-      <div class="time">
-        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
-      </div>
-    </div>
-    
-
-    <div class="player">
-      <h2>Part 5</h2>
-      <audio src="/kesh/part-5.mp3" preload="none"></audio>
-      <div class="controls">
-        <button class="toggleBtn">▶️</button>
-        <input type="range" class="seekBar" value="0" step="1" min="0">
-      </div>
-      <div class="time">
-        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
-      </div>
-    </div>
-    
-
-    <div class="player">
-      <h2>Part 6</h2>
-      <audio src="/kesh/part-6.mp3" preload="none"></audio>
-      <div class="controls">
-        <button class="toggleBtn">▶️</button>
-        <input type="range" class="seekBar" value="0" step="1" min="0">
-      </div>
-      <div class="time">
-        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
-      </div>
-    </div>
-    
-
-    <div class="player">
-      <h2>Part 7</h2>
-      <audio src="/kesh/part-7.mp3" preload="none"></audio>
-      <div class="controls">
-        <button class="toggleBtn">▶️</button>
-        <input type="range" class="seekBar" value="0" step="1" min="0">
-      </div>
-      <div class="time">
-        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
-      </div>
-    </div>
-    
-
-    <div class="player">
-      <h2>Part 8</h2>
-      <audio src="/kesh/part-8.mp3" preload="none"></audio>
-      <div class="controls">
-        <button class="toggleBtn">▶️</button>
-        <input type="range" class="seekBar" value="0" step="1" min="0">
-      </div>
-      <div class="time">
-        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
-      </div>
-    </div>
-    
-
-    <div class="player">
-      <h2>Part 9</h2>
-      <audio src="/kesh/part-9.mp3" preload="none"></audio>
-      <div class="controls">
-        <button class="toggleBtn">▶️</button>
-        <input type="range" class="seekBar" value="0" step="1" min="0">
-      </div>
-      <div class="time">
-        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
-      </div>
-    </div>
-    
-
-    <div class="player">
-      <h2>Part 10</h2>
-      <audio src="/kesh/part-10.mp3" preload="none"></audio>
-      <div class="controls">
-        <button class="toggleBtn">▶️</button>
-        <input type="range" class="seekBar" value="0" step="1" min="0">
-      </div>
-      <div class="time">
-        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
-      </div>
-    </div>
-    
-
-    <div class="player">
-      <h2>Part 11</h2>
-      <audio src="/kesh/part-11.mp3" preload="none"></audio>
-      <div class="controls">
-        <button class="toggleBtn">▶️</button>
-        <input type="range" class="seekBar" value="0" step="1" min="0">
-      </div>
-      <div class="time">
-        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
-      </div>
-    </div>
-    
-
-    <div class="player">
-      <h2>Part 12</h2>
-      <audio src="/kesh/part-12.mp3" preload="none"></audio>
-      <div class="controls">
-        <button class="toggleBtn">▶️</button>
-        <input type="range" class="seekBar" value="0" step="1" min="0">
-      </div>
-      <div class="time">
-        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
-      </div>
-    </div>
-    
-
-    <div class="player">
-      <h2>Part 13</h2>
-      <audio src="/kesh/part-13.mp3" preload="none"></audio>
-      <div class="controls">
-        <button class="toggleBtn">▶️</button>
-        <input type="range" class="seekBar" value="0" step="1" min="0">
-      </div>
-      <div class="time">
-        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
-      </div>
-    </div>
-    
-
-    <div class="player">
-      <h2>Part 14</h2>
-      <audio src="/kesh/part-14.mp3" preload="none"></audio>
-      <div class="controls">
-        <button class="toggleBtn">▶️</button>
-        <input type="range" class="seekBar" value="0" step="1" min="0">
-      </div>
-      <div class="time">
-        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
-      </div>
-    </div>
-    
-
-    <div class="player">
-      <h2>Part 15</h2>
-      <audio src="/kesh/part-15.mp3" preload="none"></audio>
-      <div class="controls">
-        <button class="toggleBtn">▶️</button>
-        <input type="range" class="seekBar" value="0" step="1" min="0">
-      </div>
-      <div class="time">
-        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
-      </div>
-    </div>
-    
-
-    <div class="player">
-      <h2>Part 16</h2>
-      <audio src="/kesh/part-16.mp3" preload="none"></audio>
-      <div class="controls">
-        <button class="toggleBtn">▶️</button>
-        <input type="range" class="seekBar" value="0" step="1" min="0">
-      </div>
-      <div class="time">
-        <span class="currentTime">00:00</span> / <span class="duration">00:00</span>
-      </div>
-    </div>
-    
+<body id= 'body'>
+  <header>
+      <h1>📖 كشف الشبهات 📖</h1>
+  </header>
+  <main>
+    <h5>part-1</h5>
+    <audio src= 'part-1.mp3' preload= 'none' class= 'p1' controls></audio>
+    <h5>part-2</h5>
+    <audio src= 'part-2.mp3' preload= 'none' class= 'p1' controls></audio>
+    <h5>part-3</h5>
+    <audio src= 'part-3.mp3' preload= 'none' class= 'p1' controls></audio>
+    <h5>part-4</h5>
+    <audio src= 'part-4.mp3' preload= 'none' class= 'p1' controls></audio>
+    <h5>part-5</h5>
+    <audio src= 'part-5.mp3' preload= 'none' class= 'p1' controls></audio>
+    <h5>part-6</h5>
+    <audio src= 'part-6.mp3' preload= 'none' class= 'p1' controls></audio>
+    <h5>part-7</h5>
+    <audio src= 'part-7.mp3' preload= 'none' class= 'p1' controls></audio>
+    <h5>part-8</h5>
+    <audio src= 'part-8.mp3' preload= 'none' class= 'p1' controls></audio>
+    <h5>part-9</h5>
+    <audio src= 'part-9.mp3' preload= 'none' class= 'p1' controls></audio>
+    <h5>part-10</h5>
+    <audio src= 'part-10.mp3' preload= 'none' class= 'p1' controls></audio>
+    <h5>part-11</h5>
+    <audio src= 'part-11.mp3' preload= 'none' class= 'p1' controls></audio>
+  </main>
   <script>
-    document.querySelectorAll('.player').forEach(player => {
-      const audio = player.querySelector('audio');
-      const playBtn = player.querySelector('.toggleBtn');
-      const seekBar = player.querySelector('.seekBar');
-      const currentTimeEl = player.querySelector('.currentTime');
-      const durationEl = player.querySelector('.duration');
+    const body = document.getElementById('body');
+    const texts = document.getElementsByTagName('h5');
 
-      playBtn.addEventListener('click', () => {
-        if (audio.paused) {
-          audio.play();
-          playBtn.textContent = "⏸️";
-        } else {
-          audio.pause();
-          playBtn.textContent = "▶️";
-        }
-      });
+      let currentHour = new Date().getHours();
 
-      audio.addEventListener('loadedmetadata', () => {
-        seekBar.max = audio.duration;
-        durationEl.textContent = formatTime(audio.duration);
-      });
-
-      audio.addEventListener('timeupdate', () => {
-        seekBar.value = audio.currentTime;
-        currentTimeEl.textContent = formatTime(audio.currentTime);
-      });
-
-      seekBar.addEventListener('input', () => {
-        audio.currentTime = seekBar.value;
-      });
-
-      audio.addEventListener('ended', () => {
-        playBtn.textContent = "▶️";
-      });
-    });
-
-    function formatTime(sec) {
-      const minutes = Math.floor(sec / 60);
-      const seconds = Math.floor(sec % 60);
-      return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+      if (currentHour >= 18 || currentHour < 15)
+    {
+      body.style.backgroundColor= '#151211';
+      for (let i = 0; i < 11; i++)
+    {
+      texts[i].style.color='white';
+    }
     }
   </script>
 </body>
