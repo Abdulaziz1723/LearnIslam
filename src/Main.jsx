@@ -1,10 +1,9 @@
 import MainFetch from "./MainFetch"
-
+import AyahWidget from "./AyahWidget"
 export default function Main(){
     return(
         <main>
-        <div id="ayah-widget"></div>
-        <script src="/ayah-widget/ayah.js"></script>
+        <AyahWidget/>
         <MainFetch/>
         </main>
     )
