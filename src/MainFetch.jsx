@@ -14,9 +14,6 @@ export default function MainFetch () {
         photo={item.photo}
         link={item.link}
         />
-        <hr />
-        <div className="defkitab">
-        </div>
         </>
       )
     })

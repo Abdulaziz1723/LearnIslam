@@ -41,6 +41,8 @@
     <audio src= '/kesh/part-10.mp3' preload= 'none' class= 'p1' controls></audio>
     <h5>part-11</h5>
     <audio src= '/kesh/part-11.mp3' preload= 'none' class= 'p1' controls></audio>
+    <h5>part-12</h5>
+    <audio src= '/kesh/part-12.mp3' preload= 'none' class= 'p1' controls></audio>
   </main>
   <script>
     const body = document.getElementById('body');
@@ -51,7 +53,7 @@
       if (currentHour >= 18 || currentHour < 7)
     {
       body.style.backgroundColor= '#151211';
-      for (let i = 0; i < 11; i++)
+      for (let i = 0; i < texts.length; i++)
     {
       texts[i].style.color='white';
     }
