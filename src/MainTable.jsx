@@ -8,7 +8,7 @@ export default function MainTable(
                 <div className="up">                
                 <h1 id="type">{type}</h1>
                 <h2 id="nameOfUstaz">ኡስታዝ፡ {nameOfUstaz}</h2>
-                <p id="definition">{definition}</p>
+                <p id="definition" style={{whiteSpace: "pre-line"}}>{definition}</p>
                 <h2 id="kitabName">የ መጽሃፉ ስም ፡ {kitabName}</h2>
                 </div>
                  <div className="under">

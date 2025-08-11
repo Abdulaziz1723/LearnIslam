@@ -31,17 +31,18 @@ const AyahWidget = () => {
   return (
     <div style={{
       maxWidth: "80%",
-      background: "#fff",
-      border: "2px solid #000",
+      background: "linear-gradient(45deg, tomato, #0075dc)",
+      border: "1px solid #fff",
       borderRadius: "12px",
       padding: "15px",
       fontFamily: "sans-serif",
       margin: "20px auto",
-      textAlign: "center"
+      textAlign: "center",
+      color:"#fff",
     }}>
       <div style={{ fontSize: "1.1rem", marginBottom: "10px" }}>{ayah.text}</div>
-      <div style={{ color: "#555", fontStyle: "italic" }}>{ayah.translation}</div>
-      <div style={{ textAlign: "right", color: "#999", fontSize: "0.9rem" }}>{ayah.surah}</div>
+      <div style={{ color: "#fff", fontStyle: "italic" }}>{ayah.translation}</div>
+      <div style={{ textAlign: "right", color: "#9ff", fontSize: "0.9rem" }}>{ayah.surah}</div>
     </div>
   );
 };
