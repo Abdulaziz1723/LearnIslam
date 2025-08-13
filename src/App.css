@@ -185,6 +185,11 @@ main .BeginnerUstaz .container:hover
 {
   color: #ffffff;
 }
+p
+{
+  padding: 10px; 
+  line-height: 1.8em;
+}
 main .defkitab
 {
   display: contents;
