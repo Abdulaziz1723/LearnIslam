@@ -30,7 +30,7 @@ const AyahWidget = () => {
 
   return (
     <div style={{
-      width: "85%",
+      width: "80%",
       background: "linear-gradient(45deg, tomato, #0075dc)",
       border: "1px solid #fff",
       borderRadius: "12px",
