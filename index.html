@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/images/fav1.png" />
+    <meta name="theme-color" content = "#0075dc">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>مَدْرَسَةْ بَيَان لِلنّاس</title>
   </head>
@@ -12,18 +13,15 @@
       const body = document.getElementById('root');
       function dark(){
         body.style.backgroundColor="#010201";
-        document.querySelectorAll('meta')[1].content = '#000'; 
       }
       function light() {
         body.style.backgroundColor="#fff";
-        document.querySelectorAll('meta')[1].content = '#0075dc'; 
       }
       let currentHour = new Date().getHours();
       if (currentHour >= 9 || currentHour < 7) {
           dark();
         }
         else light();
-        console.log(document.querySelectorAll('meta')[1].content);
     </script>
   </body>
 </html>
