@@ -17,10 +17,10 @@ export default function Footer() {
                 <a href="https://www.youtube.com/channel/UCxXukuEJlM5I8TnFbgJDChg"><img src="/images/utube.jpg" id="logos" loading="lazy"/></a>
             </div>
         </div>
-    </footer>
-    <div className="at">
+        <div className="at">
               <p>©2025</p>
-    </div>
+        </div>
+    </footer>
         </>
 
     )

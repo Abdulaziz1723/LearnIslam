@@ -29,20 +29,10 @@ const AyahWidget = () => {
   const ayah = isFriday ? ayat[0] : ayat[Math.floor(Math.random() * (ayat.length - 1)) + 1];
 
   return (
-    <div style={{
-      width: "80%",
-      background: "linear-gradient(45deg, tomato, #0075dc)",
-      border: "1px solid #fff",
-      borderRadius: "12px",
-      padding: "15px",
-      fontFamily: "sans-serif",
-      margin: "20px auto",
-      textAlign: "center",
-      color:"#fff",
-    }}>
-      <div style={{ fontSize: "1.1rem", marginBottom: "10px" }}>{ayah.text}</div>
-      <div style={{ color: "#fff", fontStyle: "italic" }}>{ayah.translation}</div>
-      <div style={{ textAlign: "right", color: "#9ff", fontSize: "0.9rem" }}>{ayah.surah}</div>
+    <div style={{width: "80%",background: "tomato",border: "1px solid #fff",borderRadius: "12px",padding: "15px",fontFamily: "sans-serif",margin: "20px auto",textAlign: "center",color:"#fff",}}>
+      <div style={{ fontSize: "1.1rem", marginBottom: "10px" }}>{'{   '+ayah.text +'   }'}</div>
+      <div style={{ color: "#0f0", fontStyle: "italic" }}>{'<<  '+ ayah.translation+'  >>'}</div>
+      <div style={{ textAlign: "right", margin:'5px 10px 2px 0', textDecoration:'underline', color: "#fff", fontSize: "0.9rem" }}>{ayah.surah}</div>
     </div>
   );
 };
