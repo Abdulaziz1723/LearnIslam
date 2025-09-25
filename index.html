@@ -12,13 +12,13 @@
     <script>
       const body = document.getElementById('root');
       function dark(){
-        body.style.backgroundColor="#020202c9";
+        body.style.backgroundColor="#010201";
       }
       function light() {
         body.style.backgroundColor="#fff";
       }
       let currentHour = new Date().getHours();
-      if (currentHour >= 19 || currentHour < 7) {
+      if (currentHour >= 9 || currentHour < 7) {
           dark();
         }
         else light();
