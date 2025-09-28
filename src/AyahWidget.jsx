@@ -27,13 +27,22 @@ const AyahWidget = () => {
   const today = new Date();
   const isFriday = today.getDay() === 5;
   const ayah = isFriday ? ayat[0] : ayat[Math.floor(Math.random() * (ayat.length - 1)) + 1];
+ 
+
+  if (localStorage.getItem('userName')) {
+    console.log('Your Name stored In the local storge!');
+  } else  localStorage.setItem('userName' , prompt('Enter Your Name Here!'))
 
   return (
+    <>
+    <div style={{width:'95%',color:'#fff',display:'flex',flexDirection:'column', justifyContent:'start', fontSize:'12px', margin:'30px 3px'}}><h2 style={{textTransform:'capitalize'}}>Welcome Back: {localStorage.getItem('userName')} </h2></div>
     <div style={{width: "80%",background: "tomato",border: "1px solid #fff",borderRadius: "12px",padding: "15px",fontFamily: "sans-serif",margin: "20px auto",textAlign: "center",color:"#fff",}}>
       <div style={{ fontSize: "1.1rem", marginBottom: "10px" }}>{'{   '+ayah.text +'   }'}</div>
       <div style={{ color: "#0f0", fontStyle: "italic" }}>{'<<  '+ ayah.translation+'  >>'}</div>
       <div style={{ textAlign: "right", margin:'5px 10px 2px 0', textDecoration:'underline', color: "#fff", fontSize: "0.9rem" }}>{ayah.surah}</div>
     </div>
+    </>
+
   );
 };
 
