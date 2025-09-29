@@ -16,12 +16,13 @@ header
 {
     width: 100%;
     height: 65px;
-    background-color: #ffffff;
+    background-color: #4c87a7;
     border: 1px solid rgb(0, 0, 0);
     display: flex;
     align-items: center;
     position: fixed;
     top: 0;
+    z-index: 1;
     backdrop-filter: blur(5px);
     transition: top 1.2s ease;
 }
@@ -40,9 +41,9 @@ header> div
 {
     width: 65px;
     height: 55px;
-    border: 1px double rgb(0, 0, 0);
+    border: 1px double rgb(255, 255, 255);
     border-radius: 10px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     margin: 10px;
 }
 #logo:hover
@@ -56,7 +57,7 @@ header> div
 }
  header h1
 {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 21px;
     text-align: center;
     margin-left: 20px;
@@ -85,6 +86,22 @@ main
   gap: 0;
   margin-top: 20px;
   margin-bottom: 20px;
+  z-index: 0;
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 32%;
+}
+@keyframes appear{
+from
+{
+    opacity: 0;
+    transform: translateX(-400px);
+    background-color: #ffffff;
+}
+to
+{
+    opacity: 8;
+}
 }
 .up
 {
@@ -97,7 +114,7 @@ main
 }
 main #type
 {
-  color: #00ff33;
+  color: #ffffff;
   font-size: 22px;
   text-decoration: underline;
   margin: 10px;
@@ -111,11 +128,12 @@ main #nameOfUstaz
 main #definition
 {
   margin: 10px;
-  color: #ffffff;
+  color: #000;
+  font-size: 16px;
 }
 #kitabName
 {
-  color: #00ff33;
+  color: #ffffff;
   font-size: 15px;
   margin-left: 10px;
   text-decoration: underline;
@@ -171,11 +189,11 @@ main .defkitab
 }
 main #kuz
 {
-  background-color: #0075dc;
+  background-color: #4c87a7;
 }
 main #keshf
 {
-  background-color: tomato;
+  background-color: #4c87a7;
 }
 /*footer part starts here*/
 footer{
@@ -185,7 +203,7 @@ footer{
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  background-color:#ffffff;
+  background-color:#4c87a7;
   border: 1px solid black;
   border-radius: 20px 20px 00 00;
   padding: 10px 00 00 00;
@@ -194,7 +212,7 @@ footer{
 {
   width: auto;
   height: auto;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -213,7 +231,7 @@ ul li
 {
  width: auto;
  height: auto;
- color: rgb(0, 0, 0);
+ color: rgb(255, 255, 255);
  display: flex;
  flex-direction: column;
  justify-content: center;
@@ -229,10 +247,11 @@ ul li
   width: 50px;
   height: 50px;
   margin: 10px;
+  border-radius: 5px;
 }
 a
 {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 .at
 {
@@ -246,7 +265,7 @@ a
 }
 .at p
 {
-  color: #000000;
+  color: #ffffff;
   font-family: 'Courier New', Courier, monospace,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 @media (max-width:600px) {

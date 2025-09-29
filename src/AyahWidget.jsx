@@ -35,14 +35,14 @@ const AyahWidget = () => {
 
   return (
     <>
-    <div style={{width:'95%',color:'#fff',display:'flex',flexDirection:'column', justifyContent:'start', fontSize:'12px', margin:'30px 3px'}}><h2 style={{textTransform:'capitalize'}}>Welcome Back: {localStorage.getItem('userName')} </h2></div>
-    <div style={{width: "80%",background: "tomato",border: "1px solid #fff",borderRadius: "12px",padding: "15px",fontFamily: "sans-serif",margin: "20px auto",textAlign: "center",color:"#fff",}}>
-      <div style={{ fontSize: "1.1rem", marginBottom: "10px" }}>{'{   '+ayah.text +'   }'}</div>
-      <div style={{ color: "#0f0", fontStyle: "italic" }}>{'<<  '+ ayah.translation+'  >>'}</div>
-      <div style={{ textAlign: "right", margin:'5px 10px 2px 0', textDecoration:'underline', color: "#fff", fontSize: "0.9rem" }}>{ayah.surah}</div>
+    <div style={{width:'auto', height:'35px',background: "#4c87a7",color:'#fff',display:'flex',flexDirection:'column', justifyContent:'center',alignItems:'center', fontSize:'10px', margin:'20px 3px', border:'1px solid #000', borderRadius:'7px', padding:'7px'}}><h2 style={{textTransform:'uppercase', color:'#000'}}>
+      Welcome Back : {localStorage.getItem('userName')}</h2></div>
+    <div style={{width: "80%",background: "#4c87a7",border: "1px solid #000",borderRadius: "12px",padding: "15px",fontFamily: "sans-serif",margin: "20px auto",textAlign: "center",color:"#fff",}}>
+      <div style={{ fontSize: "1.1rem", marginBottom: "10px",color:'#000' ,fontSize:'1.1rem' }}>{'{   '+ayah.text +'   }'}</div>
+      <div style={{ color: "#000", fontStyle: "italic" }}>{'<<  '+ ayah.translation+'  >>'}</div>
+      <div style={{ textAlign: "right", margin:'5px 10px 2px 0', textDecoration:'underline', color: "#000", fontSize: "0.9rem" }}>{ayah.surah}</div>
     </div>
     </>
-
   );
 };
 
